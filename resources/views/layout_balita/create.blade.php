@@ -24,7 +24,7 @@ Form Data Balita
     <div class="card">
         <div class="card-body">
             <h5 class="card-title"></h5>
-            <h5 class="card-title">Form Data Karyawan</h5>
+            <h5 class="card-title">Form Data Balita</h5>
             <!-- Form Karyawan -->
             <form action="store" method="POST">
                 @csrf
@@ -32,58 +32,11 @@ Form Data Balita
                     <label for="inputText" class="col-sm-2 required-label">Nama</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control
-                        @error('nama')
+                        @error('nama_balita')
                         is-invalid
-                        @enderror" placeholder="Masukkan nama" name="nama" id="nama">
-                        @error('nama')
+                        @enderror" placeholder="Masukkan Nama Balita" name="nama_balita" id="nama_balita">
+                        @error('nama_balita')
                         <div class="invalid-feedback" id="invalidCheck3Feedback">
-                            {{ $message }}
-                        </div>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 required-label">Tempat Lahir</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control
-                        @error('tempat_lahir')
-                        is-invalid
-                        @enderror" placeholder="Masukkan tempat_lahir" name="tempat_lahir" id="tempat_lahir">
-                        @error('tempat_lahir')
-                        <div class="invalid-feedback" id="invalidCheck3Feedback">
-                            {{ $message }}
-                        </div>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="inputDate" class="col-sm-2 required-label">Tanggal Lahir</label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control
-                        @error('tanggal_lahir')
-                        is-invalid
-                        @enderror
-                        " placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" id="tanggal_lahir">
-                        @error('tanggal_lahir')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                        @enderror
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 required-label">Alamat</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control
-                        @error('alamat')
-                        is-invalid
-                        @enderror
-                        " placeholder="Masukkan Alamat Nama Jalan" name="alamat"  id="alamat">
-                        @error('alamat')
-                        <div class="invalid-feedback">
                             {{ $message }}
                         </div>
                         @enderror
@@ -108,20 +61,48 @@ Form Data Balita
                         @enderror
                     </div>
                 </div>
+                
+                <div class="row mb-3">
+                    <label for="inputDate" class="col-sm-2 required-label">Tempat Lahir</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control
+                        @error('tempat_lahir')
+                        is-invalid
+                        @enderror
+                        " placeholder="Masukkan Tanggal Lahir" name="tempat_lahir" id="tempat_lahir">
+                        @error('tempat_lahir')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                </div>
 
                 <div class="row mb-3">
-                    <label class="col-sm-2 required-label">Departemen</label>
+                    <label for="inputDate" class="col-sm-2 required-label">Tanggal Lahir</label>
                     <div class="col-sm-10">
-                        <select class="form-select
-                        @error('departemen_id')
+                        <input type="date" class="form-control
+                        @error('tanggal_lahir')
                         is-invalid
-                        @enderror" name="departemen_id" aria-label="Default select example">
-                            <option value="">Pilih departemen</option>
-                            @foreach ($departemen as $dp)
-                            <option value="{{$dp->id}}">{{ $dp->nama }}</option>
-                            @endforeach
-                        </select>
-                        @error('departemen_id')
+                        @enderror
+                        " placeholder="Masukkan Tanggal Lahir" name="tanggal_lahir" id="tanggal_lahir">
+                        @error('tanggal_lahir')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 required-label">Nama Orang Tua</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control
+                        @error('nama_orangtua')
+                        is-invalid
+                        @enderror
+                        " placeholder="Masukkan Nama Orang Tua" name="nama_orangtua"  id="nama_orangtua">
+                        @error('nama_orangtua')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
